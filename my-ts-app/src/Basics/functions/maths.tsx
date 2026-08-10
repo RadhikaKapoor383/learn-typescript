@@ -13,6 +13,12 @@ export function divideNumbers(a: number, b: number): number {
     }
     return a / b;
 }
+export function modulerNumbers(a: number, b: number): number {
+    if (b === 0) {
+        throw new Error("Cannot perform modulus by zero");
+    }
+    return a % b;
+}
 export function calculateArea(length: number, width: number): number {
     return length * width;
 }
@@ -30,10 +36,11 @@ function mathOperations() {
     const difference = subtractNumbers(num1, num2);
     const product = multiplyNumbers(num1, num2);
     const quotient = divideNumbers(num1, num2);
+    const modulus = modulerNumbers(num1, num2);
     const area = calculateArea(num1, num2);
     const perimeter = calculatePerimeter(num1, num2);
     const circleArea = calculateCircleArea(num1);
 
-    return { sum, difference, product, quotient, area, perimeter, circleArea };
+    return { sum, difference, product, quotient, modulus, area, perimeter, circleArea };
 }
 export default mathOperations;
